@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="font_list">
+        <item>@string/UNBATANG</item>
+        <item>@string/UNDINARU</item>
+        <item>@string/UNDOTUM</item>
+        <item>@string/UNGRAPHIC</item>
+        <item>@string/UNGUNGSEO</item>
+        <item>@string/UNPILGI</item>
+        <item>@string/KOPUBBATANG</item>
+        <item>@string/KOPUBDOTUM</item>
+    </string-array>
+</resources>

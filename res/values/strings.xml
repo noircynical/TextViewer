@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CremaTextViewer</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="UNBATANG">은바탕</string>
+    <string name="UNDINARU">은디나루</string>
+    <string name="UNDOTUM">은돋움</string>
+    <string name="UNGRAPHIC">은그래픽</string>
+    <string name="UNPILGI">은필기</string>
+    <string name="UNGUNGSEO">은궁서</string>
+    <string name="KOPUBBATANG">KOPUB바탕</string>
+    <string name="KOPUBDOTUM">KOPUB돋움</string>
+    
+    <string name="searchResult">의 검색결과</string>
+    <string name="searching">검색중</string>
+
+</resources>

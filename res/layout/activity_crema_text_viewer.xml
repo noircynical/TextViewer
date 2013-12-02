@@ -1,0 +1,784 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.example.crematextviewer"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".MainActivity" >
+
+    <!-- TextView top bar -->
+
+    <ViewAnimator
+        android:id="@+id/TopSwitcher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" >
+
+        <RelativeLayout
+            android:id="@+id/MainTopBar"
+            android:layout_width="match_parent"
+            android:layout_height="72px"
+            android:background="@drawable/bar_body_pattern"
+            android:onClick="onNothing" >
+
+            <ImageView
+                android:id="@+id/textViewerIcon"
+                android:layout_width="37px"
+                android:layout_height="47px"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="11px"
+                android:layout_marginLeft="17px"
+                android:src="@drawable/icon_txt" />
+
+            <com.shou.ui.CTextView
+                android:id="@+id/TextName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="21px"
+                android:textColor="#FFFFFF"
+                android:textSize="27px"
+                custom:typeface="YDYGO33"
+                style="@style/FileNameStyle" />
+
+            <ImageView
+                android:id="@+id/SettingDetail"
+                android:layout_width="38px"
+                android:layout_height="38px"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="16px"
+                android:layout_marginRight="19px"
+                android:onClick="OnSettingClick"
+                android:src="@drawable/setting_button" />
+
+            <ImageView
+                android:id="@+id/SearchBtn"
+                android:layout_width="38px"
+                android:layout_height="38px"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="17px"
+                android:layout_marginRight="16px"
+                android:layout_toLeftOf="@+id/SettingDetail"
+                android:onClick="OnSearchPopup"
+                android:src="@drawable/search_button" />
+
+            <ImageView
+                android:id="@+id/SearchBtnSelected"
+                android:layout_width="38px"
+                android:layout_height="38px"
+                android:layout_alignLeft="@+id/SearchBtn"
+                android:layout_alignTop="@+id/SearchBtn"
+                android:src="@drawable/icon_search_s" />
+        </RelativeLayout>
+    </ViewAnimator>
+
+    <!-- Search bar -->
+
+    <ViewAnimator
+        android:id="@+id/SearchBarSwitcher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TopSwitcher" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="108px"
+            android:background="@drawable/search_top_bg"
+            android:onClick="onNothing" >
+
+            <RelativeLayout
+                android:layout_width="758px"
+                android:layout_height="40px"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginBottom="35px"
+                android:layout_marginLeft="21px"
+                android:layout_marginRight="21px"
+                android:layout_marginTop="33px"
+                android:background="@drawable/search_top_textarea"
+                android:onClick="onNothing" >
+
+                <ImageView
+                    android:id="@+id/searchIcon"
+                    android:layout_width="24px"
+                    android:layout_height="21px"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginBottom="8px"
+                    android:layout_marginLeft="15px"
+                    android:src="@drawable/search_top_icon_search" />
+
+                <ImageView
+                    android:id="@+id/searchDeleteButton"
+                    android:layout_width="26px"
+                    android:layout_height="26px"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="7px"
+                    android:layout_marginRight="8px"
+                    android:onClick="OnSearchDeleteClicked"
+                    android:src="@drawable/search_top_icon_delete" />
+
+                <com.shou.ui.CEditText
+                    android:id="@+id/searchText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="3px"
+                    android:layout_marginLeft="9px"
+                    android:layout_marginRight="9px"
+                    android:layout_toLeftOf="@+id/searchDeleteButton"
+                    android:layout_toRightOf="@+id/searchIcon"
+                    android:background="@android:color/transparent"
+                    android:editable="true"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true"
+                    android:textColor="#4D3317"
+                    android:textSize="18px"
+                    custom:typeface="YDYGO33" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ViewAnimator>
+
+    <ViewAnimator
+        android:id="@+id/SearchResultSwitcher"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/TopSwitcher"
+        android:layout_marginTop="105px" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/search_overall_bg"
+            android:onClick="onNothing"
+            android:orientation="vertical"
+            android:paddingLeft="55px"
+            android:paddingRight="56px" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60px" >
+
+                <com.shou.ui.CTextView
+                    android:id="@+id/SearchResultKeyword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginBottom="18px"
+                    android:textColor="#4C3317"
+                    android:textSize="24px"
+                    custom:typeface="YDYGO32"
+                    style="@style/style2" />
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="3px"
+                android:background="@drawable/search_separator" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <ListView
+                    android:id="@+id/ListViewScreenSearchList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:cacheColorHint="#00000000"
+                    android:divider="@drawable/search_separator" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ViewAnimator>
+
+    <!-- Setting bar -->
+
+    <ViewAnimator
+        android:id="@+id/SettingMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TopSwitcher" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="297px"
+            android:background="@drawable/option_body_txt"
+            android:onClick="onNothing" >
+
+            <!-- 폰트 사이즈 -->
+
+            <com.shou.ui.CTextView
+                android:id="@+id/textSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="24px"
+                android:layout_marginTop="34px"
+                android:text="글자크기"
+                android:textColor="#202A32"
+                android:textSize="18px"
+                custom:typeface="YDYGO33"
+                style="@style/style1" />
+
+            <RelativeLayout
+                android:id="@+id/TextSize01"
+                android:layout_width="155px"
+                android:layout_height="44px"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="51px"
+                android:layout_marginTop="21px"
+                android:layout_toRightOf="@+id/textSize"
+                android:background="@drawable/option_typesize"
+                android:onClick="OnTextSizeClicked" >
+
+                <TextView
+                    android:id="@+id/TextSize01Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="가나다"
+                    android:textColor="#000000"
+                    android:textSize="22px" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/TextSize01Border"
+                android:layout_width="155px"
+                android:layout_height="44px"
+                android:layout_alignLeft="@+id/TextSize01"
+                android:layout_alignTop="@+id/TextSize01"
+                android:background="@drawable/option_selected_border" />
+
+            <RelativeLayout
+                android:id="@+id/TextSize02"
+                android:layout_width="155px"
+                android:layout_height="44px"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="6px"
+                android:layout_marginTop="21px"
+                android:layout_toRightOf="@+id/TextSize01"
+                android:background="@drawable/option_typesize"
+                android:onClick="OnTextSizeClicked" >
+
+                <TextView
+                    android:id="@+id/TextSize02Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="가나다"
+                    android:textColor="#000000"
+                    android:textSize="25px" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/TextSize02Border"
+                android:layout_width="155px"
+                android:layout_height="44px"
+                android:layout_alignLeft="@+id/TextSize02"
+                android:layout_alignTop="@+id/TextSize02"
+                android:background="@drawable/option_selected_border" />
+
+            <RelativeLayout
+                android:id="@+id/TextSize03"
+                android:layout_width="155px"
+                android:layout_height="44px"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="6px"
+                android:layout_marginTop="21px"
+                android:layout_toRightOf="@+id/TextSize02"
+                android:background="@drawable/option_typesize"
+                android:onClick="OnTextSizeClicked" >
+
+                <TextView
+                    android:id="@+id/TextSize03Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="가나다"
+                    android:textColor="#000000"
+                    android:textSize="32px" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/TextSize03Border"
+                android:layout_width="155px"
+                android:layout_height="44px"
+                android:layout_alignLeft="@+id/TextSize03"
+                android:layout_alignTop="@+id/TextSize03"
+                android:background="@drawable/option_selected_border" />
+
+            <RelativeLayout
+                android:id="@+id/TextSize04"
+                android:layout_width="155px"
+                android:layout_height="44px"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="6px"
+                android:layout_marginTop="21px"
+                android:layout_toRightOf="@+id/TextSize03"
+                android:background="@drawable/option_typesize"
+                android:onClick="OnTextSizeClicked" >
+
+                <TextView
+                    android:id="@+id/TextSize04Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="8px"
+                    android:text="가나다"
+                    android:textColor="#000000"
+                    android:textSize="35px" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/TextSize04Border"
+                android:layout_width="155px"
+                android:layout_height="44px"
+                android:layout_alignLeft="@+id/TextSize04"
+                android:layout_alignTop="@+id/TextSize04"
+                android:background="@drawable/option_selected_border" />
+
+            <!-- 배경 색상 -->
+
+            <com.shou.ui.CTextView
+                android:id="@+id/Background"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/textSize"
+                android:layout_marginLeft="25px"
+                android:layout_marginTop="43px"
+                android:text="배경"
+                android:textColor="#202A32"
+                android:textSize="18px"
+                custom:typeface="YDYGO33"
+                style="@style/style1" />
+
+            <ImageView
+                android:id="@+id/Background01"
+                android:layout_width="155px"
+                android:layout_height="44px"
+                android:layout_below="@+id/TextSize01"
+                android:layout_marginLeft="84px"
+                android:layout_marginTop="24px"
+                android:layout_toRightOf="@+id/Background"
+                android:background="@drawable/option_background_1"
+                android:onClick="OnBackgroundClicked" />
+
+            <ImageView
+                android:id="@+id/Background01Selected"
+                android:layout_width="155px"
+                android:layout_height="44px"
+                android:layout_alignLeft="@+id/Background01"
+                android:layout_alignTop="@+id/Background01"
+                android:background="@drawable/option_background1_s_notext" />
+
+            <TextView
+                android:id="@+id/Background01Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/Background01"
+                android:layout_alignTop="@+id/Background01"
+                android:layout_marginLeft="55px"
+                android:layout_marginTop="6px"
+                android:text="배경"
+                android:textSize="22px" />
+
+            <ImageView
+                android:id="@+id/Background01Border"
+                android:layout_width="155px"
+                android:layout_height="44px"
+                android:layout_alignLeft="@+id/Background01"
+                android:layout_alignTop="@+id/Background01"
+                android:background="@drawable/option_selected_border" />
+
+            <ImageView
+                android:id="@+id/Background02"
+                android:layout_width="155px"
+                android:layout_height="44px"
+                android:layout_below="@+id/TextSize02"
+                android:layout_marginLeft="6px"
+                android:layout_marginTop="24px"
+                android:layout_toRightOf="@+id/Background01"
+                android:background="@drawable/option_background_2"
+                android:onClick="OnBackgroundClicked" />
+
+            <ImageView
+                android:id="@+id/Background02Selected"
+                android:layout_width="155px"
+                android:layout_height="44px"
+                android:layout_alignLeft="@+id/Background02"
+                android:layout_alignTop="@+id/Background02"
+                android:background="@drawable/option_background2_s_notext" />
+
+            <TextView
+                android:id="@+id/Background02Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/Background02"
+                android:layout_alignTop="@+id/Background02"
+                android:layout_marginLeft="55px"
+                android:layout_marginTop="6px"
+                android:text="배경"
+                android:textSize="22px" />
+
+            <ImageView
+                android:id="@+id/Background02Border"
+                android:layout_width="155px"
+                android:layout_height="44px"
+                android:layout_alignLeft="@+id/Background02"
+                android:layout_alignTop="@+id/Background02"
+                android:background="@drawable/option_selected_border" />
+
+            <ImageView
+                android:id="@+id/Background03"
+                android:layout_width="155px"
+                android:layout_height="44px"
+                android:layout_below="@+id/TextSize03"
+                android:layout_marginLeft="6px"
+                android:layout_marginTop="24px"
+                android:layout_toRightOf="@+id/Background02"
+                android:background="@drawable/option_background_3"
+                android:onClick="OnBackgroundClicked" />
+
+            <ImageView
+                android:id="@+id/Background03Selected"
+                android:layout_width="155px"
+                android:layout_height="44px"
+                android:layout_alignLeft="@+id/Background03"
+                android:layout_alignTop="@+id/Background03"
+                android:background="@drawable/option_background3_s_notext" />
+
+            <TextView
+                android:id="@+id/Background03Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/Background03"
+                android:layout_alignTop="@+id/Background03"
+                android:layout_marginLeft="55px"
+                android:layout_marginTop="6px"
+                android:text="배경"
+                android:textSize="22px" />
+
+            <ImageView
+                android:id="@+id/Background03Border"
+                android:layout_width="155px"
+                android:layout_height="44px"
+                android:layout_alignLeft="@+id/Background03"
+                android:layout_alignTop="@+id/Background03"
+                android:background="@drawable/option_selected_border" />
+
+            <ImageView
+                android:id="@+id/Background04"
+                android:layout_width="155px"
+                android:layout_height="44px"
+                android:layout_below="@+id/TextSize04"
+                android:layout_marginLeft="6px"
+                android:layout_marginTop="24px"
+                android:layout_toRightOf="@+id/Background03"
+                android:background="@drawable/option_background_4"
+                android:onClick="OnBackgroundClicked" />
+
+            <ImageView
+                android:id="@+id/Background04Selected"
+                android:layout_width="155px"
+                android:layout_height="44px"
+                android:layout_alignLeft="@+id/Background04"
+                android:layout_alignTop="@+id/Background04"
+                android:background="@drawable/option_background4_s_notext" />
+
+            <TextView
+                android:id="@+id/Background04Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/Background04"
+                android:layout_alignTop="@+id/Background04"
+                android:layout_marginLeft="55px"
+                android:layout_marginTop="6px"
+                android:text="배경"
+                android:textSize="22px" />
+
+            <ImageView
+                android:id="@+id/Background04Border"
+                android:layout_width="155px"
+                android:layout_height="44px"
+                android:layout_alignLeft="@+id/Background04"
+                android:layout_alignTop="@+id/Background04"
+                android:background="@drawable/option_selected_border" />
+
+            <!-- 폰트 설정 -->
+
+            <com.shou.ui.CTextView
+                android:id="@+id/FontType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/Background"
+                android:layout_marginLeft="24px"
+                android:layout_marginTop="44px"
+                android:text="글꼴"
+                android:textColor="#202A32"
+                android:textSize="18px"
+                custom:typeface="YDYGO33"
+                style="@style/style1" />
+
+            <Spinner
+                android:id="@+id/FontTypeSettingSpinner"
+                android:layout_width="155px"
+                android:layout_height="45px"
+                android:layout_below="@+id/Background01"
+                android:layout_marginLeft="83px"
+                android:layout_marginTop="25px"
+                android:layout_toRightOf="@+id/FontType"
+                android:background="@drawable/dropdown_unselected"
+                android:entries="@array/font_list" />
+
+            <!-- 줄간격 -->
+
+            <com.shou.ui.CTextView
+                android:id="@+id/LineLeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Background02"
+                android:layout_marginLeft="69px"
+                android:layout_marginTop="37px"
+                android:layout_toRightOf="@+id/FontTypeSettingSpinner"
+                android:text="줄간격"
+                android:textColor="#202A32"
+                android:textSize="18px"
+                custom:typeface="YDYGO33"
+                style="@style/style1" />
+
+            <ImageView
+                android:id="@+id/LineLeading01"
+                android:layout_width="38px"
+                android:layout_height="44px"
+                android:layout_below="@+id/Background03"
+                android:layout_marginLeft="31px"
+                android:layout_marginTop="31px"
+                android:layout_toRightOf="@+id/LineLeading"
+                android:onClick="OnLineLeadingClicked"
+                android:src="@drawable/icon_lineleading1" />
+
+            <ImageView
+                android:id="@+id/LineLeading01Selected"
+                android:layout_width="38px"
+                android:layout_height="44px"
+                android:layout_alignLeft="@+id/LineLeading01"
+                android:layout_alignTop="@+id/LineLeading01"
+                android:src="@drawable/icon_leading1_s" />
+
+            <ImageView
+                android:id="@+id/LineLeading02"
+                android:layout_width="38px"
+                android:layout_height="44px"
+                android:layout_below="@+id/Background03"
+                android:layout_marginLeft="47px"
+                android:layout_marginTop="31px"
+                android:layout_toRightOf="@+id/LineLeading01"
+                android:onClick="OnLineLeadingClicked"
+                android:src="@drawable/icon_lineleading2" />
+
+            <ImageView
+                android:id="@+id/LineLeading02Selected"
+                android:layout_width="38px"
+                android:layout_height="44px"
+                android:layout_alignLeft="@+id/LineLeading02"
+                android:layout_alignTop="@+id/LineLeading02"
+                android:src="@drawable/icon_leading2_s" />
+
+            <ImageView
+                android:id="@+id/LineLeading03"
+                android:layout_width="38px"
+                android:layout_height="44px"
+                android:layout_below="@+id/Background04"
+                android:layout_marginLeft="47px"
+                android:layout_marginTop="31px"
+                android:layout_toRightOf="@+id/LineLeading02"
+                android:onClick="OnLineLeadingClicked"
+                android:src="@drawable/icon_lineleading3" />
+
+            <ImageView
+                android:id="@+id/LineLeading03Selected"
+                android:layout_width="38px"
+                android:layout_height="44px"
+                android:layout_alignLeft="@+id/LineLeading03"
+                android:layout_alignTop="@+id/LineLeading03"
+                android:src="@drawable/icon_leading3_s" />
+
+            <ImageView
+                android:id="@+id/LineLeading04"
+                android:layout_width="38px"
+                android:layout_height="44px"
+                android:layout_below="@+id/Background04"
+                android:layout_marginLeft="47px"
+                android:layout_marginTop="31px"
+                android:layout_toRightOf="@+id/LineLeading03"
+                android:onClick="OnLineLeadingClicked"
+                android:src="@drawable/icon_lineleading4" />
+
+            <ImageView
+                android:id="@+id/LineLeading04Selected"
+                android:layout_width="38px"
+                android:layout_height="44px"
+                android:layout_alignLeft="@+id/LineLeading04"
+                android:layout_alignTop="@+id/LineLeading04"
+                android:src="@drawable/icon_leading4_s" />
+
+            <!-- 인코딩 설정 -->
+
+            <com.shou.ui.CTextView
+                android:id="@+id/Encoding"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/FontType"
+                android:layout_marginLeft="24px"
+                android:layout_marginTop="41px"
+                android:text="인코딩"
+                android:textColor="#202A32"
+                android:textSize="18px"
+                custom:typeface="YDYGO33"
+                style="@style/style1" />
+
+            <ImageView
+                android:id="@+id/SelectEncoding"
+                android:layout_width="155px"
+                android:layout_height="45px"
+                android:layout_below="@+id/FontTypeSettingSpinner"
+                android:layout_marginLeft="68px"
+                android:layout_marginTop="23px"
+                android:layout_toRightOf="@+id/Encoding"
+                android:onClick="OnEncodingPopup"
+                android:src="@drawable/dropdown_unselected" />
+
+            <!-- 밝기 조절 -->
+
+            <com.shou.ui.CTextView
+                android:id="@+id/Brightness"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/LineLeading"
+                android:layout_marginLeft="70px"
+                android:layout_marginTop="45px"
+                android:layout_toRightOf="@+id/SelectEncoding"
+                android:text="밝기"
+                android:textColor="#202A32"
+                android:textSize="18px"
+                custom:typeface="YDYGO33"
+                style="@style/style1" />
+
+            <ImageView
+                android:id="@+id/BrightnessUp"
+                android:layout_width="30px"
+                android:layout_height="30px"
+                android:layout_below="@+id/LineLeading01"
+                android:layout_marginLeft="44px"
+                android:layout_marginRight="8px"
+                android:layout_marginTop="29px"
+                android:layout_toRightOf="@+id/Brightness"
+                android:src="@drawable/icon_brightness_up" />
+
+            <ImageView
+                android:id="@+id/brightnessSeekbarBar"
+                android:layout_width="245px"
+                android:layout_height="3px"
+                android:layout_below="@+id/LineLeading02"
+                android:layout_marginTop="43px"
+                android:layout_toRightOf="@+id/BrightnessUp"
+                android:background="@drawable/bar_brightness" />
+
+            <SeekBar
+                android:id="@+id/brightnessSetting"
+                android:layout_width="245px"
+                android:layout_height="20px"
+                android:layout_alignLeft="@+id/brightnessSeekbarBar"
+                android:layout_below="@+id/LineLeading02"
+                android:layout_marginTop="36px"
+                android:background="@android:color/transparent"
+                android:max="100"
+                android:progress="0"
+                android:progressDrawable="@android:color/transparent"
+                android:secondaryProgress="0"
+                android:thumb="@drawable/indicator_brightness" />
+
+            <ImageView
+                android:id="@+id/BrightnessDown"
+                android:layout_width="30px"
+                android:layout_height="30px"
+                android:layout_below="@+id/LineLeading04"
+                android:layout_marginLeft="8px"
+                android:layout_marginTop="29px"
+                android:layout_toRightOf="@+id/brightnessSetting"
+                android:src="@drawable/icon_brightness_down" />
+        </RelativeLayout>
+    </ViewAnimator>
+
+    <com.example.crematextviewer.ShowTextOnCanvas
+        android:id="@+id/drawingText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ViewAnimator
+        android:id="@+id/BottomSwitcher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="72px"
+            android:background="@drawable/bar_body_pattern"
+            android:onClick="onNothing" >
+
+            <TextView
+                android:id="@+id/progressPercentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="26px"
+                android:layout_marginLeft="21px"
+                android:textColor="#FFFFFF"
+                android:textSize="18px"
+                style="@style/FileNameStyle" />
+
+            <SeekBar
+                android:id="@+id/ContentsSeekBar"
+                android:layout_width="636px"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="25px"
+                android:layout_marginLeft="25px"
+                android:layout_toRightOf="@id/progressPercentage"
+                android:background="#88ff0000"
+                android:max="100"
+                android:progress="0"
+                android:progressDrawable="@android:color/transparent"
+                android:secondaryProgress="0"
+                android:thumb="@drawable/indicator_page" />
+
+            <ImageView
+                android:id="@+id/SearchReset"
+                android:layout_width="40px"
+                android:layout_height="40px"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="13px"
+                android:layout_marginTop="15px"
+                android:onClick="OnUndoClicked"
+                android:src="@drawable/icon_undo" />
+        </RelativeLayout>
+    </ViewAnimator>
+
+    <ViewAnimator
+        android:id="@+id/FontTypeSwitcher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

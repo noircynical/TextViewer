@@ -1,0 +1,785 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.example.crematextviewer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="642px"
+        android:layout_height="340px"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true">
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/encodingName"
+            android:layout_width="642px"
+            android:layout_height="77px"
+            android:background="@drawable/popup_container_top" >
+
+            <com.shou.ui.CTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="36px"
+                android:layout_marginTop="26px"
+                android:text="인코더 선택"
+                android:textColor="#4C3317"
+                android:textSize="26px"
+                custom:typeface="YDYGO33"
+                style="@style/style1" />
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="642px"
+            android:layout_height="179px"
+            android:background="@drawable/popup_container_mid"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <ImageView
+                        android:id="@+id/encoding01"
+                        android:layout_width="627px"
+                        android:layout_centerInParent="true"
+                        android:layout_height="50px"
+                        android:onClick="OnEncodingClick"
+                        android:src="@drawable/encoding_button" />
+
+                    <com.shou.ui.CTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/encoding01"
+                        android:layout_alignLeft="@+id/encoding01"
+                        android:layout_marginBottom="14px"
+                        android:layout_marginLeft="32px"
+                        android:text="UTF-8"
+                        android:textColor="#7A7673"
+                        android:textSize="24px"
+                        custom:typeface="YDYGO33" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <ImageView
+                        android:id="@+id/encoding02"
+                        android:layout_width="627px"
+                        android:layout_centerInParent="true"
+                        android:layout_height="50px"
+                        android:onClick="OnEncodingClick"
+                        android:src="@drawable/encoding_button" />
+
+                    <com.shou.ui.CTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/encoding02"
+                        android:layout_alignLeft="@+id/encoding02"
+                        android:layout_marginBottom="14px"
+                        android:layout_marginLeft="32px"
+                        android:text="EUC-KR"
+                        android:textColor="#7A7673"
+                        android:textSize="24px"
+                        custom:typeface="YDYGO33" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <ImageView
+                        android:id="@+id/encoding03"
+                        android:layout_width="627px"
+                        android:layout_centerInParent="true"
+                        android:layout_height="50px"
+                        android:onClick="OnEncodingClick"
+                        android:src="@drawable/encoding_button" />
+
+                    <com.shou.ui.CTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/encoding03"
+                        android:layout_alignLeft="@+id/encoding03"
+                        android:layout_marginBottom="14px"
+                        android:layout_marginLeft="32px"
+                        android:text="Shift_JIS"
+                        android:textColor="#7A7673"
+                        android:textSize="24px"
+                        custom:typeface="YDYGO33" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <ImageView
+                        android:id="@+id/encoding04"
+                        android:layout_width="627px"
+                        android:layout_centerInParent="true"
+                        android:layout_height="50px"
+                        android:onClick="OnEncodingClick"
+                        android:src="@drawable/encoding_button" />
+
+                    <com.shou.ui.CTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/encoding04"
+                        android:layout_alignLeft="@+id/encoding04"
+                        android:layout_marginBottom="14px"
+                        android:layout_marginLeft="32px"
+                        android:text="UTF-16"
+                        android:textColor="#7A7673"
+                        android:textSize="24px"
+                        custom:typeface="YDYGO33" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <ImageView
+                        android:id="@+id/encoding05"
+                        android:layout_width="627px"
+                        android:layout_centerInParent="true"
+                        android:layout_height="50px"
+                        android:onClick="OnEncodingClick"
+                        android:src="@drawable/encoding_button" />
+
+                    <com.shou.ui.CTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/encoding05"
+                        android:layout_alignLeft="@+id/encoding05"
+                        android:layout_marginBottom="14px"
+                        android:layout_marginLeft="32px"
+                        android:text="EUC-JP"
+                        android:textColor="#7A7673"
+                        android:textSize="24px"
+                        custom:typeface="YDYGO33" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <ImageView
+                        android:id="@+id/encoding06"
+                        android:layout_width="627px"
+                        android:layout_centerInParent="true"
+                        android:layout_height="50px"
+                        android:onClick="OnEncodingClick"
+                        android:src="@drawable/encoding_button" />
+
+                    <com.shou.ui.CTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/encoding06"
+                        android:layout_alignLeft="@+id/encoding06"
+                        android:layout_marginBottom="14px"
+                        android:layout_marginLeft="32px"
+                        android:text="Big5"
+                        android:textColor="#7A7673"
+                        android:textSize="24px"
+                        custom:typeface="YDYGO33" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <ImageView
+                        android:id="@+id/encoding07"
+                       android:layout_width="627px"
+                        android:layout_centerInParent="true"
+                        android:layout_height="50px"
+                        android:onClick="OnEncodingClick"
+                        android:src="@drawable/encoding_button" />
+
+                    <com.shou.ui.CTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/encoding07"
+                        android:layout_alignLeft="@+id/encoding07"
+                        android:layout_marginBottom="14px"
+                        android:layout_marginLeft="32px"
+                        android:text="ISO-2022-JP"
+                        android:textColor="#7A7673"
+                        android:textSize="24px"
+                        custom:typeface="YDYGO33" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <ImageView
+                        android:id="@+id/encoding08"
+                        android:layout_width="627px"
+                        android:layout_centerInParent="true"
+                        android:layout_height="50px"
+                        android:onClick="OnEncodingClick"
+                        android:src="@drawable/encoding_button" />
+
+                    <com.shou.ui.CTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/encoding08"
+                        android:layout_alignLeft="@+id/encoding08"
+                        android:layout_marginBottom="14px"
+                        android:layout_marginLeft="32px"
+                        android:text="ISO-2022-CN"
+                        android:textColor="#7A7673"
+                        android:textSize="24px"
+                        custom:typeface="YDYGO33" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <ImageView
+                        android:id="@+id/encoding09"
+                        android:layout_width="627px"
+                        android:layout_centerInParent="true"
+                        android:layout_height="50px"
+                        android:onClick="OnEncodingClick"
+                        android:src="@drawable/encoding_button" />
+
+                    <com.shou.ui.CTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/encoding09"
+                        android:layout_alignLeft="@+id/encoding09"
+                        android:layout_marginBottom="14px"
+                        android:layout_marginLeft="32px"
+                        android:text="ISO-2022-KR"
+                        android:textColor="#7A7673"
+                        android:textSize="24px"
+                        custom:typeface="YDYGO33" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <ImageView
+                        android:id="@+id/encoding10"
+                        android:layout_width="627px"
+                        android:layout_centerInParent="true"
+                        android:layout_height="50px"
+                        android:onClick="OnEncodingClick"
+                        android:src="@drawable/encoding_button" />
+
+                    <com.shou.ui.CTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/encoding10"
+                        android:layout_alignLeft="@+id/encoding10"
+                        android:layout_marginBottom="14px"
+                        android:layout_marginLeft="32px"
+                        android:text="ISO-8859-1"
+                        android:textColor="#7A7673"
+                        android:textSize="24px"
+                        custom:typeface="YDYGO33" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <ImageView
+                        android:id="@+id/encoding11"
+                        android:layout_width="627px"
+                        android:layout_centerInParent="true"
+                        android:layout_height="50px"
+                        android:onClick="OnEncodingClick"
+                        android:src="@drawable/encoding_button" />
+
+                    <com.shou.ui.CTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/encoding11"
+                        android:layout_alignLeft="@+id/encoding11"
+                        android:layout_marginBottom="14px"
+                        android:layout_marginLeft="32px"
+                        android:text="ISO-8859-2"
+                        android:textColor="#7A7673"
+                        android:textSize="24px"
+                        custom:typeface="YDYGO33" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <ImageView
+                        android:id="@+id/encoding12"
+                        android:layout_width="627px"
+                        android:layout_centerInParent="true"
+                        android:layout_height="50px"
+                        android:onClick="OnEncodingClick"
+                        android:src="@drawable/encoding_button" />
+
+                    <com.shou.ui.CTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/encoding12"
+                        android:layout_alignLeft="@+id/encoding12"
+                        android:layout_marginBottom="14px"
+                        android:layout_marginLeft="32px"
+                        android:text="ISO-8859-3"
+                        android:textColor="#7A7673"
+                        android:textSize="24px"
+                        custom:typeface="YDYGO33" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <ImageView
+                        android:id="@+id/encoding13"
+                        android:layout_width="627px"
+                        android:layout_centerInParent="true"
+                        android:layout_height="50px"
+                        android:onClick="OnEncodingClick"
+                        android:src="@drawable/encoding_button" />
+
+                    <com.shou.ui.CTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/encoding13"
+                        android:layout_alignLeft="@+id/encoding13"
+                        android:layout_marginBottom="14px"
+                        android:layout_marginLeft="32px"
+                        android:text="ISO-8859-4"
+                        android:textColor="#7A7673"
+                        android:textSize="24px"
+                        custom:typeface="YDYGO33" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <ImageView
+                        android:id="@+id/encoding14"
+                        android:layout_width="627px"
+                        android:layout_centerInParent="true"
+                        android:layout_height="50px"
+                        android:onClick="OnEncodingClick"
+                        android:src="@drawable/encoding_button" />
+
+                    <com.shou.ui.CTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/encoding14"
+                        android:layout_alignLeft="@+id/encoding14"
+                        android:layout_marginBottom="14px"
+                        android:layout_marginLeft="32px"
+                        android:text="ISO-8859-5"
+                        android:textColor="#7A7673"
+                        android:textSize="24px"
+                        custom:typeface="YDYGO33" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <ImageView
+                        android:id="@+id/encoding15"
+                        android:layout_width="627px"
+                        android:layout_centerInParent="true"
+                        android:layout_height="50px"
+                        android:onClick="OnEncodingClick"
+                        android:src="@drawable/encoding_button" />
+
+                    <com.shou.ui.CTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/encoding15"
+                        android:layout_alignLeft="@+id/encoding15"
+                        android:layout_marginBottom="14px"
+                        android:layout_marginLeft="32px"
+                        android:text="ISO-8859-6"
+                        android:textColor="#7A7673"
+                        android:textSize="24px"
+                        custom:typeface="YDYGO33" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <ImageView
+                        android:id="@+id/encoding16"
+                        android:layout_width="627px"
+                        android:layout_centerInParent="true"
+                        android:layout_height="50px"
+                        android:onClick="OnEncodingClick"
+                        android:src="@drawable/encoding_button" />
+
+                    <com.shou.ui.CTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/encoding16"
+                        android:layout_alignLeft="@+id/encoding16"
+                        android:layout_marginBottom="14px"
+                        android:layout_marginLeft="32px"
+                        android:text="ISO-8859-7"
+                        android:textColor="#7A7673"
+                        android:textSize="24px"
+                        custom:typeface="YDYGO33" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <ImageView
+                        android:id="@+id/encoding17"
+                        android:layout_width="627px"
+                        android:layout_centerInParent="true"
+                        android:layout_height="50px"
+                        android:onClick="OnEncodingClick"
+                        android:src="@drawable/encoding_button" />
+
+                    <com.shou.ui.CTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/encoding17"
+                        android:layout_alignLeft="@+id/encoding17"
+                        android:layout_marginBottom="14px"
+                        android:layout_marginLeft="32px"
+                        android:text="ISO-8859-8"
+                        android:textColor="#7A7673"
+                        android:textSize="24px"
+                        custom:typeface="YDYGO33" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <ImageView
+                        android:id="@+id/encoding18"
+                        android:layout_width="627px"
+                        android:layout_centerInParent="true"
+                        android:layout_height="50px"
+                        android:onClick="OnEncodingClick"
+                        android:src="@drawable/encoding_button" />
+
+                    <com.shou.ui.CTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/encoding18"
+                        android:layout_alignLeft="@+id/encoding18"
+                        android:layout_marginBottom="14px"
+                        android:layout_marginLeft="32px"
+                        android:text="ISO-8859-9"
+                        android:textColor="#7A7673"
+                        android:textSize="24px"
+                        custom:typeface="YDYGO33" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <ImageView
+                        android:id="@+id/encoding19"
+                        android:layout_width="627px"
+                        android:layout_centerInParent="true"
+                        android:layout_height="50px"
+                        android:onClick="OnEncodingClick"
+                        android:src="@drawable/encoding_button" />
+
+                    <com.shou.ui.CTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/encoding19"
+                        android:layout_alignLeft="@+id/encoding19"
+                        android:layout_marginBottom="14px"
+                        android:layout_marginLeft="32px"
+                        android:text="KOI8-R"
+                        android:textColor="#7A7673"
+                        android:textSize="24px" 
+                        custom:typeface="YDYGO33"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <ImageView
+                        android:id="@+id/encoding20"
+                        android:layout_width="627px"
+                        android:layout_centerInParent="true"
+                        android:layout_height="50px"
+                        android:onClick="OnEncodingClick"
+                        android:src="@drawable/encoding_button" />
+
+                    <com.shou.ui.CTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/encoding20"
+                        android:layout_alignLeft="@+id/encoding20"
+                        android:layout_marginBottom="14px"
+                        android:layout_marginLeft="32px"
+                        android:text="KOI8-U"
+                        android:textColor="#7A7673"
+                        android:textSize="24px"
+                        custom:typeface="YDYGO33" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <ImageView
+                        android:id="@+id/encoding21"
+                        android:layout_width="627px"
+                        android:layout_centerInParent="true"
+                        android:layout_height="50px"
+                        android:onClick="OnEncodingClick"
+                        android:src="@drawable/encoding_button" />
+
+                    <com.shou.ui.CTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/encoding21"
+                        android:layout_alignLeft="@+id/encoding21"
+                        android:layout_marginBottom="14px"
+                        android:layout_marginLeft="32px"
+                        android:text="UTF-16C"
+                        android:textColor="#7A7673"
+                        android:textSize="24px"
+                        custom:typeface="YDYGO33" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <ImageView
+                        android:id="@+id/encoding22"
+                        android:layout_width="627px"
+                        android:layout_centerInParent="true"
+                        android:layout_height="50px"
+                        android:onClick="OnEncodingClick"
+                        android:src="@drawable/encoding_button" />
+
+                    <com.shou.ui.CTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/encoding22"
+                        android:layout_alignLeft="@+id/encoding22"
+                        android:layout_marginBottom="14px"
+                        android:layout_marginLeft="32px"
+                        android:text="UTF-16LE"
+                        android:textColor="#7A7673"
+                        android:textSize="24px"
+                        custom:typeface="YDYGO33" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <ImageView
+                        android:id="@+id/encoding23"
+                        android:layout_width="627px"
+                        android:layout_centerInParent="true"
+                        android:layout_height="50px"
+                        android:onClick="OnEncodingClick"
+                        android:src="@drawable/encoding_button" />
+
+                    <com.shou.ui.CTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/encoding23"
+                        android:layout_alignLeft="@+id/encoding23"
+                        android:layout_marginBottom="14px"
+                        android:layout_marginLeft="32px"
+                        android:text="Big5-HKSCS"
+                        android:textColor="#7A7673"
+                        android:textSize="24px" 
+                        custom:typeface="YDYGO33"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <ImageView
+                        android:id="@+id/encoding24"
+                        android:layout_width="627px"
+                        android:layout_centerInParent="true"
+                        android:layout_height="50px"
+                        android:onClick="OnEncodingClick"
+                        android:src="@drawable/encoding_button" />
+
+                    <com.shou.ui.CTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/encoding24"
+                        android:layout_alignLeft="@+id/encoding24"
+                        android:layout_marginBottom="14px"
+                        android:layout_marginLeft="32px"
+                        android:text="CESU-8"
+                        android:textColor="#7A7673"
+                        android:textSize="24px"
+                        custom:typeface="YDYGO33" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <ImageView
+                        android:id="@+id/encoding25"
+                       android:layout_width="627px"
+                        android:layout_centerInParent="true"
+                        android:layout_height="50px"
+                        android:onClick="OnEncodingClick"
+                        android:src="@drawable/encoding_button" />
+
+                    <com.shou.ui.CTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/encoding25"
+                        android:layout_alignLeft="@+id/encoding25"
+                        android:layout_marginBottom="14px"
+                        android:layout_marginLeft="32px"
+                        android:text="cp864"
+                        android:textColor="#7A7673"
+                        android:textSize="24px" 
+                        custom:typeface="YDYGO33"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <ImageView
+                        android:id="@+id/encoding26"
+                        android:layout_width="627px"
+                        android:layout_centerInParent="true"
+                        android:layout_height="50px"
+                        android:onClick="OnEncodingClick"
+                        android:src="@drawable/encoding_button" />
+
+                    <com.shou.ui.CTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/encoding26"
+                        android:layout_alignLeft="@+id/encoding26"
+                        android:layout_marginBottom="14px"
+                        android:layout_marginLeft="32px"
+                        android:text="GB18030"
+                        android:textColor="#7A7673"
+                        android:textSize="24px"
+                        custom:typeface="YDYGO33" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <ImageView
+                        android:id="@+id/encoding27"
+                        android:layout_width="627px"
+                        android:layout_centerInParent="true"
+                        android:layout_height="50px"
+                        android:onClick="OnEncodingClick"
+                        android:src="@drawable/encoding_button" />
+
+                    <com.shou.ui.CTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/encoding27"
+                        android:layout_alignLeft="@+id/encoding27"
+                        android:layout_marginBottom="14px"
+                        android:layout_marginLeft="32px"
+                        android:text="GBK"
+                        android:textColor="#7A7673"
+                        android:textSize="24px"
+                        custom:typeface="YDYGO33" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <ImageView
+                        android:id="@+id/encoding28"
+                        android:layout_width="627px"
+                        android:layout_centerInParent="true"
+                        android:layout_height="50px"
+                        android:onClick="OnEncodingClick"
+                        android:src="@drawable/encoding_button" />
+
+                    <com.shou.ui.CTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/encoding28"
+                        android:layout_alignLeft="@+id/encoding28"
+                        android:layout_marginBottom="14px"
+                        android:layout_marginLeft="32px"
+                        android:text="HZ-GB-2312"
+                        android:textColor="#7A7673"
+                        android:textSize="24px"
+                        custom:typeface="YDYGO33" />
+                </RelativeLayout>
+            </LinearLayout>
+        </ScrollView>
+
+       <RelativeLayout
+            android:id="@+id/buttonBar"
+            android:layout_width="642px"
+            android:layout_height="84px"
+            android:background="@drawable/popup_container_bot" >
+
+            <RelativeLayout
+                android:id="@+id/cancel"
+                android:layout_width="298px"
+                android:layout_height="51px"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="20px"
+                android:layout_marginLeft="172px"
+                android:background="@drawable/popup_button"
+                android:onClick="OnCancelClicked" >
+                
+                <com.shou.ui.CTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="130px"
+                    android:layout_marginBottom="15px"
+                    android:text="취소"
+                    android:textSize="20px"
+                    android:textColor="#4C3317"
+                    custom:typeface="YDYGO33"/>
+            </RelativeLayout>
+
+           
+        </RelativeLayout>
+    </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

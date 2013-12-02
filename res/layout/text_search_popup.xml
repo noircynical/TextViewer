@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="800px"
+    android:layout_height="108px"
+    android:background="@drawable/search_top_bg"
+    android:layout_gravity="left|top">
+
+    <EditText
+        android:id="@+id/searchText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="search the text"/>
+    <Button
+        android:id="@+id/searchGo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/searchText"
+        android:text="Search"
+        android:onClick="SearchButtonClicked"/>
+
+</RelativeLayout>
